@@ -19,23 +19,6 @@
     "trailing": true,
     "smarttabs": true,
     "globals": {
-        "jasmine": true,
-        "afterEach": true,
-        "beforeEach": true,
-        "describe": true,
-        "expect": true,
-        "it": true,
-        "xit": true,
-        "runs": true,
-        "spyOn": true,
-        "waits": true,
-        "XDomainRequest": true,
-        "angular": true,
-        "module": true,
-        "exports": true,
-        "require": true,
-        "$": true,
-        "gapi": true,
-        "FB": true
+        "describe": true
     }
 }
