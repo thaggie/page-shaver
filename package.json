@@ -1,0 +1,23 @@
+{
+  "name": "pure-text",
+  "version": "1.0.0",
+  "description": "Scriptmark to try and remove the distracting elements in long blog posts so that they're easier to read.",
+  "main": "pt.js",
+  "dependencies": {
+    "gulp": "^3.8.10"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-jshint": "^1.9.0",
+    "jshint-stylish": "^1.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github-home:thaggie/pure-text.git"
+  },
+  "author": "Tom Haggie",
+  "license": "MIT"
+}
