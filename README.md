@@ -1,8 +1,12 @@
-pure-text
+Page Shaver
 =========
 
-Scriptmark to try and remove the distracting elements in long blog posts so that they're easier to read.
+Bookmarklet to try and remove the distracting elements in long blog posts so that they're easier to read.
 
-Drag this link to your bookmarks bar:
+The bookmarklet to make use of this is:
+```
+javascript:(function(){var%20tag%20=%20document.createElement('script');tag.setAttribute('type','text/javascript');tag.setAttribute('src','//rawgithub.com/thaggie/page-shaver/master/ps.js');document.head.appendChild(tag);})();
+```
 
-<a href="javascript:(function(){var%20tag%20=%20document.createElement('script');tag.setAttribute('type','text/javascript');tag.setAttribute('src','//rawgithub.com/thaggie/pure-text/master/pt.js');document.head.appendChild(tag);})();">PT</a>
+This blog post has a link you can drag to your bookmarks bar (or click to test).
+[](http://thaggie.github.io/2014/12/30/page-shaver.html)
