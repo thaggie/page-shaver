@@ -36,7 +36,7 @@ var stripToJust = function(element, after) {
 	
 	if (after) {
 		document.body.className = '';
-		document.body.style = '';	
+		document.body.removeAttribute('style');
 		stripAll('link');
 		stripAll('style');
 	}
