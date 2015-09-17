@@ -10,6 +10,13 @@ var stripAll = function(tag) {
 	
 };
 
+var clearStyle = function(element) {
+	if (element) {
+		element.className = '';
+		element.removeAttribute('style');
+	}
+};
+
 var stripToJust = function(element, after) {
 	var parentNode = element.parentNode,
 	children = parentNode.childNodes,
@@ -27,16 +34,13 @@ var stripToJust = function(element, after) {
 		parentNode.removeChild(node);
 	});
 
-	parentNode.className = '';
-	//parentNode.style = '';
-	parentNode.removeAttribute('style');
+	clearStyle(parentNode);
 	if (parentNode.parentNode && parentNode !== document.body) {
 		stripToJust(parentNode, true);
 	} 
 	
 	if (after) {
-		document.body.className = '';
-		document.body.removeAttribute('style');
+		clearStyle(document.body);
 		stripAll('link');
 		stripAll('style');
 	}
