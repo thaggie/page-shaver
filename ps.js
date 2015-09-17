@@ -28,7 +28,8 @@ var stripToJust = function(element, after) {
 	});
 
 	parentNode.className = '';
-	parentNode.style = '';
+	//parentNode.style = '';
+	parentNode.removeAttribute('style');
 	if (parentNode.parentNode && parentNode !== document.body) {
 		stripToJust(parentNode, true);
 	} 
@@ -49,7 +50,7 @@ var styleBody = function() {
 	document.body.style.background = 'none';
 };
 
-var ids = ['essay', 'body-content', 'storyContent', 'contentBody', 'hldcontent', 'contentColumn', 'content', 'article-container', 'articleFullText', 'main_text', 'main','Blog1','constrictor','pageLeftColumn'];
+var ids = ['essay', 'story_content', 'body-content', 'story_content', 'storyContent', 'contentBody', 'hldcontent', 'contentColumn', 'content', 'article-container', 'articleFullText', 'main_text', 'main','Blog1','constrictor','pageLeftColumn'];
 var articles = document.getElementsByTagName('article');
 var content, i;
 
