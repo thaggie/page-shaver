@@ -1,24 +1,33 @@
 (function() {
 'use strict';
 
+if (window.location.hash === '#debug-ps') {
+    /*jshint debug:true */
+    debugger;
+}
+
 var ids = [
-	'essay', 
-	'blog', 
-	'story_content', 
-	'body-content', 
-	'story_content', 
-	'storyContent', 
-	'contentBody', 
-	'hldcontent', 
-	'contentColumn', 
-	'content', 
-	'article-container', 
-	'articleFullText', 
-	'main_text', 
+	'essay',
+	'blog',
+	'story_content',
+	'body-content',
+	'story_content',
+	'storyContent',
+	'contentBody',
+	'hldcontent',
+	'contentColumn',
+	'content',
+	'article-container',
+	'articleFullText',
+	'main_text',
 	'main',
 	'Blog1',
 	'constrictor',
 	'pageLeftColumn'
+];
+
+var classes = [
+    'ArticleCopy' // www.sitepoint.com
 ];
 
 var stripAll = function(tag) {
@@ -27,7 +36,7 @@ var stripAll = function(tag) {
 	elements.forEach(function(element){
 		element.parentNode.removeChild(element);
 	});
-	
+
 };
 
 var clearStyle = function(element) {
@@ -57,8 +66,8 @@ var stripToJust = function(element, after) {
 	clearStyle(parentNode);
 	if (parentNode.parentNode && parentNode !== document.body) {
 		stripToJust(parentNode, true);
-	} 
-	
+	}
+
 	if (after) {
 		clearStyle(document.body);
 		stripAll('link');
@@ -88,7 +97,7 @@ var filterOutListItemArticles = function (articles) {
 	var filtered = [];
 	var article = null;
 	var i=0;
-	
+
 	for (i=0; i<articles.length; ++i) {
 		article = articles[i];
 		switch(article.parentNode.tagName) {
@@ -96,11 +105,11 @@ var filterOutListItemArticles = function (articles) {
 			case 'ASIDE':
 				break;
 			default:
-				filtered.push(article);			
+				filtered.push(article);
 				break;
 		}
 	}
-	
+
 	return filtered;
 };
 
@@ -112,20 +121,38 @@ var largestArticle = function (articles) {
 if (articles.length > 1) {
 	articles = filterOutListItemArticles(articles);
 }
+
+var findByClasses = function() {
+
+    for (var i=0; i<classes.length; ++i) {
+        var elements = document.getElementsByClassName(classes[i]);
+        if (elements.length === 1) {
+            return elements[i];
+        }
+    }
+};
+
 switch (articles.length) {
 	case 0:
 	if (content) {
 		stripToJust(content);
-	}
+	} else {
+        content = findByClasses();
+        if (content) {
+            stripToJust(content);
+        }
+    }
 	break;
 	case 1:
 		stripToJust(articles[0]);
 		break;
 	default:
-		stripToJust(largestArticle(articles));
+        stripToJust(largestArticle(articles));
 		break;
 }
+
 window.zapIt = stripToJust;
 styleBody();
+
 
 })();
