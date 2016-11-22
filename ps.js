@@ -76,11 +76,9 @@ var stripToJust = function(element, after) {
 };
 
 var styleBody = function() {
-	document.body.style.fontSize = '14pt';
-	document.body.style.lineHeight = '1.5em';
 	document.body.style.maxWidth = '40em';
 	document.body.style.margin = '0 auto';
-	document.body.style.background = 'none';
+	document.body.style.background = '#ffe';
 
   var newStyle = document.createElement('style');
   newStyle.innerHTML = 'img {max-width:40em;}';
@@ -160,7 +158,7 @@ styleBody();
 
 var iframes = document.querySelectorAll('iframe');
 for (var i=0;i<iframes.length;++i) {
-  iframe[i].parentNode.removeChild(iframe[i]);
+  iframes[i].parentNode.removeChild(iframes[i]);
 }
 
 })();
