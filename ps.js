@@ -27,7 +27,8 @@ var ids = [
 ];
 
 var classes = [
-    'ArticleCopy' // www.sitepoint.com
+    'ArticleCopy', // www.sitepoint.com
+    'page-content' // commonsensecanadian.ca
 ];
 
 var stripAll = function(tag) {
