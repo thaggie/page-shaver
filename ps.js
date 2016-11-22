@@ -81,6 +81,10 @@ var styleBody = function() {
 	document.body.style.maxWidth = '40em';
 	document.body.style.margin = '0 auto';
 	document.body.style.background = 'none';
+
+  var newStyle = document.createElement('style');
+  newStyle.innerHTML = 'img {max-width:40em;}';
+  document.head.appendChild(newStyle);
 };
 
 var articles = document.getElementsByTagName('article');
@@ -154,5 +158,9 @@ switch (articles.length) {
 window.zapIt = stripToJust;
 styleBody();
 
+var iframes = document.querySelectorAll('iframe');
+for (var i=0;i<iframes.length;++i) {
+  iframe[i].parentNode.removeChild(iframe[i]);
+}
 
 })();
