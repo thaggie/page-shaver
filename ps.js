@@ -76,9 +76,11 @@ var stripToJust = function(element, after) {
 };
 
 var styleBody = function() {
+	document.body.style.fontSize = '14pt';
+	document.body.style.lineHeight = '1.5em';
 	document.body.style.maxWidth = '40em';
 	document.body.style.margin = '0 auto';
-	document.body.style.background = '#ffe';
+	document.body.style.background = 'none';
 
   var newStyle = document.createElement('style');
   newStyle.innerHTML = 'img {max-width:40em;}';
