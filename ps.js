@@ -132,7 +132,7 @@ var findByClasses = function() {
     for (var i=0; i<classes.length; ++i) {
         var elements = document.getElementsByClassName(classes[i]);
         if (elements.length === 1) {
-            return elements[i];
+            return elements[0];
         }
     }
 };
